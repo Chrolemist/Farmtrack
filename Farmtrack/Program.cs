@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Farmtrack.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<FarmtrackContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FarmtrackContext") ?? throw new InvalidOperationException("Connection string 'FarmtrackContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
