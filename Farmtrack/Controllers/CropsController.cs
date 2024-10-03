@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Farmtrack.Data;
+using Farmtrack.Models;
 
 namespace Farmtrack.Controllers
 {

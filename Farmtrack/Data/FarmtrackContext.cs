@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Farmtrack.Controllers;
+using Farmtrack.Models;
 
 namespace Farmtrack.Data
 {
@@ -14,6 +14,6 @@ namespace Farmtrack.Data
         {
         }
 
-        public DbSet<Farmtrack.Controllers.Crop> Crop { get; set; } = default!;
+        public DbSet<Crop> Crop { get; set; } = default!;
     }
 }

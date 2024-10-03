@@ -1,4 +1,4 @@
-﻿namespace Farmtrack.Controllers
+﻿namespace Farmtrack.Models
 {
     public class Crop
     {
