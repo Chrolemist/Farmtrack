@@ -54,7 +54,7 @@ namespace Farmtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,PlantingDate,HarvestDate")] Crop crop)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,PlantingDate,HarvestDate")] Crop crop)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Farmtrack.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,PlantingDate,HarvestDate")] Crop crop)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,PlantingDate,HarvestDate")] Crop crop)
         {
             if (id != crop.Id)
             {
