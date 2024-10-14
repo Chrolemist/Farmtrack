@@ -35,12 +35,6 @@ namespace Farmtrack.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("FertilizingFrequencyDays")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GrowthStage")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("HarvestDate")
                         .HasColumnType("datetime2");
 
@@ -50,9 +44,6 @@ namespace Farmtrack.Migrations
 
                     b.Property<DateTime>("PlantingDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("WateringFrequencyDays")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
