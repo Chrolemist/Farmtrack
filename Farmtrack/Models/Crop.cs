@@ -1,5 +1,6 @@
 ﻿using Farmtrack.Validation;
 using System.ComponentModel.DataAnnotations;
+using System.Configuration;
 
 namespace Farmtrack.Models
 {
@@ -20,6 +21,19 @@ namespace Farmtrack.Models
         [DataType(DataType.Date)]
         [DataGreaterThan("PlantingDate")]
         public DateTime HarvestDate { get; set; }
+
+        [Required(ErrorMessage = "Watering frequency is required")]
+        public int WateringFrequencyDays { get; set; }
+        [Required(ErrorMessage = "Fertilizing frequency is required")]
+        public int FertilizingFrequencyDays { get; set; }
+
+        [Required(ErrorMessage = "Growth stage is required")]
+        [Range(0, 5, ErrorMessage = "Growth stage must be between 1 and 5")]
+        public int GrowthStage { get; set; }
+
+
+
+        
 
     }
 }

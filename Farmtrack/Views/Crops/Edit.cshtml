@@ -34,6 +34,21 @@
                 <span asp-validation-for="HarvestDate" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="WateringFrequencyDays" class="control-label"></label>
+                <input asp-for="WateringFrequencyDays" class="form-control" />
+                <span asp-validation-for="WateringFrequencyDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FertilizingFrequencyDays" class="control-label"></label>
+                <input asp-for="FertilizingFrequencyDays" class="form-control" />
+                <span asp-validation-for="FertilizingFrequencyDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrowthStage" class="control-label"></label>
+                <input asp-for="GrowthStage" class="form-control" />
+                <span asp-validation-for="GrowthStage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
