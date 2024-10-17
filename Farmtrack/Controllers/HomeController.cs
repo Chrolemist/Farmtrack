@@ -1,16 +1,20 @@
 using Farmtrack.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Farmtrack.Controllers
 {
+    //[Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly WeatherService _weatherService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, WeatherService weatherService)
         {
             _logger = logger;
+            _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
         }
 
         public IActionResult Index()
@@ -22,6 +26,7 @@ namespace Farmtrack.Controllers
         {
             return View();
         }
+    
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

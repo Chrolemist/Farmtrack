@@ -1,0 +1,15 @@
+﻿@model Farmtrack.Models.WeatherData
+
+<h2>Weather Information</h2>
+
+@if (Model != null)
+{
+    <p><strong>Valid Time:</strong> @Model.ValidTime</p>
+    <p><strong>Temperature:</strong> @Model.Temperature °C</p>
+    <p><strong>Cloud Cover:</strong> @Model.CloudCover octas</p>
+    <p><strong>Rain:</strong> @Model.Rain kg/m²/h</p>
+}
+else
+{
+    <p>No weather data available.</p>
+}

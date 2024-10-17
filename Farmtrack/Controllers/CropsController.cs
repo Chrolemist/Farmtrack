@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Farmtrack.Data;
 using Farmtrack.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Farmtrack.Controllers
 {
+    //[Authorize]
     public class CropsController : Controller
     {
         private readonly FarmtrackContext _context;
