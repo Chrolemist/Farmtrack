@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Farmtrack.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class CropsController : Controller
     {
         private readonly FarmtrackContext _context;

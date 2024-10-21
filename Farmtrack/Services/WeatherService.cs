@@ -21,7 +21,7 @@ public class WeatherService
             using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
             {
                 var root = doc.RootElement;
-                var timeSeries = root.GetProperty("timeSeries")[0]; // Hämta första tidseriedatan
+                var timeSeries = root.GetProperty("timeSeries")[0]; 
                 var validTime = timeSeries.GetProperty("validTime").GetDateTime();
 
                 double temperature = 0;
