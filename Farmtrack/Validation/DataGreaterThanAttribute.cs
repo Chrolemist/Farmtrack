@@ -14,9 +14,12 @@ namespace Farmtrack.Validation
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var property = validationContext.ObjectType.GetProperty(_comparisonProperty);
-            
-            var comparisonValue = property.GetValue(validationContext.ObjectInstance);
+            if (property == null)
+            {
+                return new ValidationResult($"Unknown property {_comparisonProperty}");
+            }
 
+            var comparisonValue = property.GetValue(validationContext.ObjectInstance);
             if (value == null || comparisonValue == null)
             {
                 return ValidationResult.Success;
