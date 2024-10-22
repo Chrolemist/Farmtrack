@@ -17,15 +17,30 @@ html {
   min-height: 100%;
 }
 
+
+
+header{
+    
+    padding: 10px;
+    
+}
+
 body {
-  margin-bottom: 60px;
-  text-align: center;
+    
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-gap: 5px;
 }
 
 aside {
-    text-align: left;
-    list-style-position: inside;
+    text-align: center;
 }
+
 
 ul{
         list-style-position: inside;
