@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Farmtrack.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
@@ -49,6 +50,24 @@
             </div>
         </nav>
     </header>
+
+    <aside>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    More Options
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" asp-controller="Weather" asp-action="Index">View Weather Information</a></li>
+                    <li><a class="nav-link" asp-controller="Reminders" asp-action="Index">View Upcoming Reminders</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </aside>
 
     <div class="container">
         <main role="main" class="pb-3">
