@@ -47,20 +47,17 @@
         </nav>
     </header>
 
+    <aside class="btn-group-vertical" role="group" aria-label="Basic example">
+        <a class="btn btn-primary" asp-controller="Weather" asp-action="Index">View Weather Information</a>
+        <a class="btn btn-primary" asp-controller="Reminders" asp-action="Index">View Upcoming Reminders</a>
+    </aside>
+
    
     <main role="main">
-        <aside class="btn-group-vertical" role="group" aria-label="Basic example">
-            <a class="btn btn-primary" asp-controller="Weather" asp-action="Index">View Weather Information</a>
-            <a class="btn btn-primary" asp-controller="Reminders" asp-action="Index">View Upcoming Reminders</a>
-        </aside>
+       
 
-        <section><h2>Welcome to Farmtrack</h2></section>
-
-        <aside class="btn-group-vertical" role="group" aria-label="Basic example">
-            <a class="btn btn-primary" asp-controller="Weather" asp-action="Index">View Weather Information</a>
-            <a class="btn btn-primary" asp-controller="Reminders" asp-action="Index">View Upcoming Reminders</a>
-        </aside>
-        
+        <h2>Welcome to Farmtrack</h2>
+   
         @RenderBody()
     </main>
 
@@ -74,5 +71,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
