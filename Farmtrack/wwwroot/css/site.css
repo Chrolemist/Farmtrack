@@ -38,6 +38,12 @@ main {
 
 aside {
     grid-area: menu;
+    display : flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    gap: 10px;
 }
   
 footer {
