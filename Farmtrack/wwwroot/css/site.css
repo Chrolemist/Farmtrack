@@ -38,10 +38,8 @@ main {
 
 aside {
     grid-area: menu;
-    background-color: #f8f9fa;
-    padding: 20px;
 }
-
+  
 footer {
     grid-area: footer;
     
