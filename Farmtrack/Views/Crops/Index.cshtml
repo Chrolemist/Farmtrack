@@ -10,7 +10,9 @@
 
 <p>
     <a asp-action="Create" class="btn btn-primary">
-        <i class="bi bi-plus">Create</i> 
+        <i class="bi bi-pencil-square"></i>
+        <i class="bi bi-plus" class="d-none"></i>
+        <span>Create new Crop</span>
     </a>
 </p>
 <table class="table">
@@ -19,58 +21,64 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th class="hide-mobile">
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th>
+            <th class="hide-mobile">
                 @Html.DisplayNameFor(model => model.PlantingDate)
             </th>
-            <th>
+            <th class="hide-mobile">
                 @Html.DisplayNameFor(model => model.HarvestDate)
             </th>
-            <th>
+            <th class="hide-mobile">
                 @Html.DisplayNameFor(model => model.WateringFrequencyDays)
             </th>
-            <th>
+            <th class="hide-mobile">
                 @Html.DisplayNameFor(model => model.FertilizingFrequencyDays)
             </th>
-            <th>
+            <th class="hide-mobile">
                 @Html.DisplayNameFor(model => model.GrowthStage)
             </th>
-            
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlantingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HarvestDate)
-            </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.WateringFrequencyDays)
-            </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.FertilizingFrequencyDays)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="hide-mobile">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="hide-mobile">
+                    @Html.DisplayFor(modelItem => item.PlantingDate)
+                </td>
+                <td class="hide-mobile">
+                    @Html.DisplayFor(modelItem => item.HarvestDate)
+                </td>
+                <td class="hide-mobile">
+                    @Html.DisplayFor(modelItem => item.WateringFrequencyDays)
+                </td>
+                <td class="hide-mobile">
+                    @Html.DisplayFor(modelItem => item.FertilizingFrequencyDays)
+                </td>
+                <td class="hide-mobile">
                     @Html.DisplayFor(modelItem => item.GrowthStage)
                 </td>
-            <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
-                <a  class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="bi bi-pencil-square"></i><span>Edit</span>
+                    </a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">
+                        <i class="bi bi-info-square"></i><span>Details</span>
+                    </a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="bi bi-trash3"></i><span>Delete</span>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

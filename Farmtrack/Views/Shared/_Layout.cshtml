@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-
     <header>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Farmtrack</a>
 
@@ -43,15 +42,40 @@
                             </li>
                         }
                     </ul>
+                   
+                    
+
                 </div>
+
+               
+               
+
+                   
+                
+                 
+
+                
+                 
             </div>
         </nav>
     </header>
 
+    <div id="mobile-menu">
+        <a class="btn btn-primary" asp-controller="Weather" asp-action="Index" data-bs-toggle="tooltip" title="Weather">
+            <i class="bi bi-cloud"></i> Weather
+        </a>
+        <a class="btn btn-primary" asp-controller="Reminders" asp-action="Index" data-bs-toggle="tooltip" title="Reminders">
+            <i class="bi bi-alarm"></i> Reminders
+        </a>
+    </div>
+
     <aside >
-        <a class="btn btn-primary" asp-controller="Weather" asp-action="Index">View Weather Information</a>
-        <a class="btn btn-primary" asp-controller="Reminders" asp-action="Index">View Upcoming Reminders</a>
+        <a class="btn btn-primary" asp-controller="Weather" asp-action="Index"><i class="bi bi-cloud"></i> Weather</a>
+        <a class="btn btn-primary" asp-controller="Reminders" asp-action="Index"><i class="bi bi-alarm"></i> Reminders</a>
     </aside>
+
+    
+    
 
    
     <main role="main"> 
