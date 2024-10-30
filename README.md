@@ -4,12 +4,12 @@
 Gå till: Tools > NuGet Package Manager > Package Manager Console
 
 2. Kör följande kommando i Package Manager Console:
-==Update-Database==
+<mark>Update-Database</mark>
 
 3. Starta Webbapplikationen (F5) och registrera en ny användare.
 Skulle inloggningen krångla så går det att avaktivera den genom att lägga **[Authorize]** som en kommentar eller ta bort den helt.
 
-==Authorize hittas i Solutionexplorer - Controllers.==
+<mark>Authorize hittas i Solutionexplorer - Controllers.</mark>
 
 Branchen som är den slutliga heter ==After-Login== och det är den som gäller.
 
