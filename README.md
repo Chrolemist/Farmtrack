@@ -13,5 +13,5 @@ Skulle inloggningen krångla så går det att avaktivera den genom att lägga **
 
 Branchen som är den slutliga heter <mark>After-Login</mark> och det är den som gäller.
 
-Har ni några frågor så kontaktas jag enklast på crv87@outlook.com eller på Discord: chrolemist
+Har ni några frågor så kontaktas jag enklast på crv87@outlook.com
 
