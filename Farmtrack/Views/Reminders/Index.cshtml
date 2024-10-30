@@ -2,25 +2,22 @@
     ViewData["Title"] = "Reminders";
 }
 
+<div class="rounded-reminder-container">
+    <h2>Upcoming Reminders</h2>
 
-
-<h2>Upcoming Reminders</h2>
-
-<body>
-@if (ViewBag.Reminders.Count > 0)
-{
-    <ul>
-        @foreach (var reminder in ViewBag.Reminders)
-        {
-            <li>@reminder</li>
-        }
-
-
-    </ul>
-}
-else
-{
-    <p>No reminders at this time.</p>
-}
 </body>
 
+    @if (ViewBag.Reminders.Count > 0)
+    {
+        <ul>
+            @foreach (var reminder in ViewBag.Reminders)
+            {
+                <li>@reminder</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No reminders at this time.</p>
+    }
+</div>
