@@ -12,8 +12,8 @@ public class WeatherService
 
     public async Task<WeatherData> GetWeatherDataAsync(string latitude, string longitude)
     {
-        //var url = null $"https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{longitude}/lat/{latitude}/data.json";
-        var url = $"https://invalid-url-for-testing/{longitude}/{latitude}/data.json";
+        var url = ($"https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{longitude}/lat/{latitude}/data.json");
+        
         var response = await _httpClient.GetAsync(url);
 
        

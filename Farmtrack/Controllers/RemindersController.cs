@@ -24,8 +24,8 @@ namespace Farmtrack.Controllers
 
             foreach (var crop in crops)
             {
-                // Kontrollera vattningsfrekvens
-                if (crop.WateringFrequencyDays > 0) // Kontrollera att frekvensen är större än 0
+                
+                if (crop.WateringFrequencyDays > 0) 
                 {
                     if ((today - crop.PlantingDate).Days % crop.WateringFrequencyDays == 0)
                     {
@@ -33,8 +33,8 @@ namespace Farmtrack.Controllers
                     }
                 }
 
-                // Kontrollera gödslingsfrekvens
-                if (crop.FertilizingFrequencyDays > 0) // Kontrollera att frekvensen är större än 0
+                
+                if (crop.FertilizingFrequencyDays > 0)
                 {
                     if ((today - crop.PlantingDate).Days % crop.FertilizingFrequencyDays == 0)
                     {
@@ -43,7 +43,7 @@ namespace Farmtrack.Controllers
                     }
                 }
 
-                // Påminnelse för skörd
+                
                 if ((crop.HarvestDate - today).Days == 7)
                 {
                     reminders.Add($"The crop {crop.Name} will be ready for harvest in 7 days");
