@@ -11,7 +11,7 @@ Skulle inloggningen krångla så går det att avaktivera den genom att lägga **
 
 ==Authorize hittas i Solutionexplorer - Controllers.==
 
-## Branchen som är den slutliga heter ==After-Login== och det är den som gäller.
+Branchen som är den slutliga heter ==After-Login== och det är den som gäller.
 
 Har ni några frågor så kontaktas jag enklast på crv87@outlook.com eller på Discord: chrolemist
 
