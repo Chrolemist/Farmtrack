@@ -36,6 +36,7 @@ builder.Services.AddHttpClient<WeatherService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<NotificationService>();
+builder.Services.AddScoped<ReminderService>();
 
 var app = builder.Build();
 

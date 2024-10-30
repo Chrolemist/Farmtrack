@@ -81,9 +81,13 @@
         {
             @Html.Raw(((NotificationService)ViewData["NotificationService"]).GetNotificationScript())
         }
+        @if (TempData["NotificationScript"] != null)
+        {
+            @Html.Raw(TempData["NotificationScript"])
+        }
         @RenderBody()
     </main>
-
+     
    
     <footer class="border-top footer text-muted">
         <div class="container">

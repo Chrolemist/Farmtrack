@@ -52,10 +52,12 @@ namespace Farmtrack.Controllers
 
             ViewBag.Reminders = reminders;
 
-            TempData["HasReminders"] = reminders.Any() ? "true" : "false";
+            
 
             return View();
         }
+
+        
     }
 }
 

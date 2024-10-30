@@ -1,4 +1,5 @@
 using Farmtrack.Models;
+using Farmtrack.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -9,18 +10,26 @@ namespace Farmtrack.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly WeatherService _weatherService;
+        private readonly ReminderService _remindersService;
+        private readonly NotificationService _notificationService;
 
-        public HomeController(ILogger<HomeController> logger, WeatherService weatherService)
+        public HomeController(ILogger<HomeController> logger, ReminderService remindersService, NotificationService notificationService)
         {
             _logger = logger;
-            _weatherService = weatherService ?? throw new ArgumentNullException(nameof(weatherService));
+            _notificationService = notificationService;
+            _remindersService = remindersService;
         }
 
         public IActionResult Index()
         {
-            
+            var reminders = _remindersService.GetReminders();
+            if (reminders.Any())
+            {
+                _notificationService.SetNotification("You have reminders for today!", "success");
+                TempData["NotificationScript"] = _notificationService.GetNotificationScript();
+            }
             return View();
+            
         }
 
         public IActionResult Privacy()
