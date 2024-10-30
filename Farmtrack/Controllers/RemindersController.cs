@@ -1,9 +1,11 @@
 ﻿using Farmtrack.Data;
 using Microsoft.AspNetCore.Mvc;
 using Farmtrack.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Farmtrack.Controllers
 {
+    [Authorize]
     public class RemindersController : Controller
     {
         private readonly FarmtrackContext _context;
@@ -37,6 +39,7 @@ namespace Farmtrack.Controllers
                     if ((today - crop.PlantingDate).Days % crop.FertilizingFrequencyDays == 0)
                     {
                         reminders.Add($"It's time to fertilize the crop {crop.Name}");
+                        
                     }
                 }
 
@@ -48,6 +51,8 @@ namespace Farmtrack.Controllers
             }
 
             ViewBag.Reminders = reminders;
+
+            TempData["HasReminders"] = reminders.Any() ? "true" : "false";
 
             return View();
         }

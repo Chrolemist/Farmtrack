@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Farmtrack.Data;
 using Microsoft.AspNetCore.Identity;
+using Farmtrack.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,7 @@ builder.Services.AddHttpClient<WeatherService>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<NotificationService>();
 
 var app = builder.Build();
 

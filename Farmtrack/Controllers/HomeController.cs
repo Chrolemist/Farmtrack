@@ -19,6 +19,7 @@ namespace Farmtrack.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
@@ -33,5 +34,7 @@ namespace Farmtrack.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }

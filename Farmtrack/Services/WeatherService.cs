@@ -12,16 +12,19 @@ public class WeatherService
 
     public async Task<WeatherData> GetWeatherDataAsync(string latitude, string longitude)
     {
-        var url = $"https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{longitude}/lat/{latitude}/data.json";
+        //var url = null $"https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/{longitude}/lat/{latitude}/data.json";
+        var url = $"https://invalid-url-for-testing/{longitude}/{latitude}/data.json";
         var response = await _httpClient.GetAsync(url);
 
+       
+        
         if (response.IsSuccessStatusCode)
         {
             var jsonResponse = await response.Content.ReadAsStringAsync();
             using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
             {
                 var root = doc.RootElement;
-                var timeSeries = root.GetProperty("timeSeries")[0]; 
+                var timeSeries = root.GetProperty("timeSeries")[0];
                 var validTime = timeSeries.GetProperty("validTime").GetDateTime();
 
                 double temperature = 0;
@@ -53,6 +56,10 @@ public class WeatherService
                 };
             }
         }
+        
+        
+
+        
         return null;
     }
 }
